@@ -26,7 +26,7 @@ def clear():
         _ = system('clear')
 
 # Query the API for the recently generated Blizzard JSON file URL path
-url = requests.get("https://us.api.battle.net/wow/auction/data/stormreaver?locale=en_US&apikey=nv6n8njc8jus3gtrz2n5fw9fpgyfjgcj").content
+url = requests.get("https://us.api.battle.net/wow/auction/data/stormreaver?locale=en_US&apikey=<APIKEY>").content
 unicode_str = url.decode("utf8")
 encoded_str = unicode_str.encode("ascii",'ignore')
 soup = BeautifulSoup(encoded_str, "html.parser")
