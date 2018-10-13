@@ -32,16 +32,16 @@ encoded_str = unicode_str.encode("ascii",'ignore')
 soup = BeautifulSoup(encoded_str, "html.parser")
 file = re.findall('(?<=\:\").+?(?=\"\,)', format(soup))
 clear()
-print ("")
-print (file)
-print ("")
+#print ("")
+#print (file)
+#print ("")
 # I can't get this to automatically set. Possibly related to format(soup) above adding brackets.
-file = input("Right click copy the URL above, paste it below, then press enter. \r\n\r\n")
+#file = input("Right click copy the URL above, paste it below, then press enter. \r\n\r\n")
 
 
 # Downloads the latest auction JSON file
 #file = 'http://auction-api-us.worldofwarcraft.com/auction-data/9694c0d6b384d8aa647c840e4c8a3435/auctions.json'
-r = requests.get(file)
+r = requests.get(file[0])
 with open('auctions.json', 'wb') as f:
   f.write(r.content)
 data = json.load(open('auctions.json'))
